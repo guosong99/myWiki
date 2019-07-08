@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="shortcut icon" href="../img/favicon.ico">
+  <title>Vim spacevim - tiger</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Vim spacevim";
+    var mkdocs_page_input_path = "vim_spacevim.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href=".." class="icon icon-home"> tiger</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+	  
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="..">home</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../vim_noplugs/">vim</a>
+	    </li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="..">tiger</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="..">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>Vim spacevim</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <div class="toc">
+<ul>
+<li><a href="#_1">〇 写在前面的话</a></li>
+<li><a href="#_2">一 高频操作汇总</a><ul>
+<li><a href="#_3">模糊搜索</a></li>
+<li><a href="#neovimspacevimide">neovim+spacevim打造高效IDE之高效代码编辑</a></li>
+</ul>
+</li>
+<li><a href="#_4">二 常用操作总结</a><ul>
+<li><a href="#1">1.基本操作</a></li>
+<li><a href="#2">2.窗口操作</a></li>
+<li><a href="#3">3.搜索操作</a></li>
+<li><a href="#4">4.调整界面显示</a></li>
+<li><a href="#1-t-t">1 界面元素切换（这一组快捷键以 t 和 T 开头）</a></li>
+<li><a href="#2_1">2 状态栏元素动态切换</a></li>
+<li><a href="#_5">窗口操作</a></li>
+<li><a href="#_6">文件操作</a></li>
+<li><a href="#_7">其他操作</a></li>
+<li><a href="#project">工程管理project</a></li>
+<li><a href="#search">搜索search</a></li>
+<li><a href="#_8">实时代码检索</a></li>
+<li><a href="#_9">代码浏览</a></li>
+<li><a href="#10">10 常用操作</a></li>
+</ul>
+</li>
+<li><a href="#spacevim">三 spacevim安装</a><ul>
+<li><a href="#1window">1.window</a></li>
+<li><a href="#2ubuntu">2.ubuntu</a></li>
+</ul>
+</li>
+<li><a href="#spacevim_1">四 spacevim配置</a><ul>
+<li><a href="#1_1">1.字体配置</a></li>
+<li><a href="#2spacevim">2.更新spacevim</a></li>
+</ul>
+</li>
+<li><a href="#_10">五 参考文章</a></li>
+</ul>
+</div>
+<h1 id="_1">〇 写在前面的话</h1>
+<p>1.目标不是要成为spacevim专家，所以不必在意细节
+2.目标是熟练操作，提高工作效率，顺便成为spacevim高手</p>
+<h1 id="_2">一 高频操作汇总</h1>
+<pre><code>#配置与更新
+:SPUpdate   更新所有插件，包括spacevim。
+space-f-v-d 打开用户配置文件，怎么返回或单独关闭配置
+space-f-v-v 查看spacevim版本
+:h SpaceVim 访问SpaceVim帮助文档
+</code></pre>
+
+<pre><code>\   leader key
+b   buffer快捷键前缀
+p   project快捷键前缀
+s   search快捷键前缀
+h   help快捷键前缀
+</code></pre>
+
+<pre><code>#buffer操作： 
+SPC &lt;Tab&gt; //切换前一buffer,或来回切换
+SPC b . 启用缓冲区临时快捷键
+SPC b n //跳转到下一个buf
+SPC b p //跳转到前一个buf
+SPC b h //打开spacevim home界面
+SPC b d //删除当前缓冲区，但保留编辑窗口
+SPC b D  //选择一个窗口，并删除其缓冲区
+SPC b c 删除其它已保存的缓冲区
+SPC b P 使用系统剪切板内容替换当前缓冲区
+</code></pre>
+
+<pre><code class="c">#文件操作
+SPC f t 打开当前文件所在目录树=F3
+SPC f o 代开文件树，并定位到当前文件
+SPC f f 打开文件
+SPC f F 打开光标下的文件
+SPC f / 使用 find 命令查找文件，支持参数提示
+SPC f b 跳至文件书签，如何设置书签
+SPC f d Windows下显示/隐藏磁盘管理器
+SPC f s 保存文件
+SPC f S 保存所有文件
+SPC f r 打开文件历史
+SPC f y 复制并显示当前文件的绝对路径
+
+# 文件树中的常用操作 
+SPC f t 打开当前文件所在目录树=F3
+N   在光标位置新建文件
+y y 复制光标下文件路径至系统剪切板
+y Y 复制光标下文件至系统剪切板
+P   在光标位置黏贴文件
+.   切换显示隐藏文件
+s v 分屏编辑该文件
+s g 垂直分屏编辑该文件
+p   预览文件
+i   切换至文件夹历史
+v   快速查看
+g x 使用相关程序执行该文件
+'   标记光标下的文件（夹）
+V   清除所有标记
+Ctrl+r  刷新页面
+
+
+#搜索操作
+##当前文件搜索
+SPC s s     输入关键字，找到对应位置，tab选择位置，zz可以移动到本屏中央位置
+SPC s f     任意目录搜索，但需要单独给出目录路径（繁，琐不好用），当前目录为. 
+
+##在工程中搜索文件
+SPC p f 在当前工程中查找文件
+SPC p / 在当前工程中搜索文本内容
+SPC p k 关闭当前工程的所有缓冲区
+SPC p t 自动查找工程根目录
+SPC p p 显示所有工程
+</code></pre>
+
+<h2 id="_3">模糊搜索</h2>
+<h2 id="neovimspacevimide">neovim+spacevim打造高效IDE之高效代码编辑</h2>
+<pre><code> SPC p /    在当前工程搜索关键字内容，hjkl可以选择
+ SPC s /    在文件当前目录搜索关键字内容，tab向下移动选择
+ SPC s s    在当前文件搜索关键字，同/或?,n或N上下移动
+ SPC s g G  在工程中使用默认工具实时检索代码
+ SPC s b    在打开的所有缓冲区buffer搜索，
+ F2         打开函数列表窗口
+ SPC f t    打开当前文件所在目录树
+ ctrl ]     利用ctags跳转到函数定义，如果代码有修改，需要重新生成tags文件
+ ctrl t     跳回，
+ ctrl o     跳回
+
+
+
+
+ #FlyGrep 缓冲区的按键绑定：
+ &lt;Esc&gt;  close FlyGrep buffer
+&lt;Enter&gt; open file at the cursor line
+&lt;Tab&gt;   move cursor line down
+Shift-&lt;Tab&gt; move cursor line up
+&lt;Backspace&gt; remove last character
+Ctrl-w  remove the Word before the cursor
+Ctrl-u  remove the Line before the cursor
+Ctrl-k  remove the Line after the cursor
+Ctrl-a / &lt;Home&gt; Go to the beginning of the line
+Ctrl-e / &lt;End&gt;  Go to the end of the line
+
+
+
+</code></pre>
+
+<pre><code>#shell操作
+spc '  //打开shell
+exit //退出shell
+
+#窗口操作
+SPC w s 水平分割窗口
+SPC w S 水平分割窗口，并切换至新窗口
+SPC w v 垂直分离窗口
+SPC w V 垂直分离窗口，并切换至新窗口
+:vs file2.txt   垂直打开文件file2.txt（tab键选择文件）
+:sp file3.txt   水平打开文件file3.txt
+SPC w =     对齐分离的窗口
+SPC w D     选择一个窗口并关闭
+q  单独q是关闭一个窗口
+SPC w d     删除一个窗口
+SPC w h 光标跳到下边窗口
+SPC w k 光标跳到上边窗口
+SPC w h 光标跳到左边窗口
+SPC w l 光标跳到左边窗口
+ctrl-w-w//跳转窗口，或者
+6.常用按键操作
+F3 //切换文件树（等同于spc-f-t），打开默认文件树vimfiler
+F2 //打开语法树，但是需要插件ctags支持
+7.文件树操作（在F3打开的vimfiler下操作）
+. //切换显示所有的隐藏文件
+N //新建文件
+yY// 复制文件
+yy //复制文件路径
+p //粘贴文件
+i//显示文件历史
+sg//垂直分屏打开文件
+ctrl+r //刷先文件树
+
+ 8.代码浏览常用操作总结
+</code></pre>
+
+<h1 id="_4">二 常用操作总结</h1>
+<h2 id="1">1.基本操作</h2>
+<pre><code>#最基础的操作
+vim test.txt +345  #打开test.txt文件，定位到345行
+
+</code></pre>
+
+<h2 id="2">2.窗口操作</h2>
+<pre><code>F2  //函数列表，再按关闭
+F3  //文件管理器，再按关闭
+
+spc '  //打开shell ，使用:q退出或者使用exit退出。'(此单引号无意义)
+spc 窗口序号 //切换窗口
+ctrl+x  //水平交换两个窗口位置
+</code></pre>
+
+<h2 id="3">3.搜索操作</h2>
+<pre><code>spc s s //当前文件搜索关键字，搜做到所有行，使用tab或shift tab来上下选择
+spc w v //垂直分窗口,spc w V 垂直分完窗口并切到新窗口
+spc w s //水平分窗口，spc w S 水平分窗口并切到新窗口
+spc w r //顺序切换窗口.spc w R 逆序切换窗口
+//关闭窗口
+</code></pre>
+
+<h2 id="4">4.调整界面显示</h2>
+<pre><code>#neovim显示
+
+#调整字体大小显示
+#调整
+</code></pre>
+
+<h2 id="1-t-t">1 界面元素切换（这一组快捷键以 t 和 T 开头）</h2>
+<p>SPC t 8 高亮所有超过 80 列的字符
+SPC t f 高亮临界列，默认 max_column 是第 120 列
+SPC t h h   高亮当前行
+SPC t h i   高亮代码对齐线
+SPC t h c   高亮光标所在列
+SPC t h s   启用/禁用语法高亮
+SPC t i 切换显示当前对齐(TODO)
+SPC t n 显示/隐藏行号
+SPC t b 切换背景色
+SPC t t 打开 Tab 管理器？Tab管理器怎么用？干啥的？
+SPC T ~ 显示/隐藏 Buffer 结尾空行行首的 ~
+SPC T F 切换全屏(TODO)
+SPC T f 显示/隐藏 Vim 边框(GUI)
+SPC T m 显示/隐藏菜单栏
+SPC T t 显示/隐藏工具栏</p>
+<h2 id="2_1">2 状态栏元素动态切换</h2>
+<p>SPC t m b   显示/隐藏电池状态 (需要安装 acpi)
+SPC t m c   toggle the org task clock (available in org layer)(TODO)
+SPC t m i   显示/隐藏输入法
+SPC t m m   显示/隐藏 SpaceVim 已启用功能
+SPC t m M   显示/隐藏文件类型
+SPC t m n   toggle the cat! (if colors layer is declared in your dotfile)(TODO)
+SPC t m p   显示/隐藏光标位置信息
+SPC t m t   显示/隐藏时间
+SPC t m d   显示/隐藏日期
+SPC t m T   显示/隐藏状态栏
+SPC t m v   显示/隐藏版本控制信息</p>
+<h2 id="_5">窗口操作</h2>
+<p>SPC 标号  //各个窗口左下角有一个标号，窗口跳转使用
+SPC w v 或者 SPC w /  垂直分离窗口
+SPC w V 垂直分离窗口，并切换至新窗口
+SPC w s / SPC w -   水平分割窗口
+SPC w S 水平分割窗口，并切换至新窗口
+SPC w r 顺序切换窗口
+SPC w R 逆序切换窗口</p>
+<p>SPC j l 跳转到特定的行
+SPC j j 跳转到特定的字符</p>
+<h2 id="_6">文件操作</h2>
+<p>一下操作都在 vimfiler 窗口进行 （F3 打开）</p>
+<p>N：新建文件
+.：切换显示隐藏文件
+yY：复制文件
+yy：复制文件路径
+P：粘贴文件
+i：显示文件夹历史
+sg：垂直分屏打开文件
+Ctrl+r：刷新文件树</p>
+<h2 id="_7">其他操作</h2>
+<p>\y 复制, \p 粘贴 （比 "+y, "+p 方便）</p>
+<p>项目技巧
+C/C++项目
+在你项目的根目录新建一个 .clang 文件，在文件里加上 clang 的参数，如-I.. -std=c++11 等。这样你打开项目里的任何文件，根目录都是 .clang 文件所在的目录，而且语法检查也依赖这个文件。
+类C代码增强高亮在 gbk 文件中可能会出现问题，这时使用 :ChromaticaStop 停掉增强高亮即可。</p>
+<h2 id="project">工程管理project</h2>
+<p>首先是工程（根）目录要有.git/目录,命令以SPC p 前缀</p>
+<pre><code>SPC p p #显示所有工程
+SPC p f #在当前工程中查找文件
+SPC p / #在当前工程中搜索文件（fuzzy search for text)
+SPC p k #关闭当前工程的所有缓冲区
+SPC p t #find project root
+</code></pre>
+
+<h2 id="search">搜索search</h2>
+<p>以 SPC s 为前缀,然后是工具a/g/k/r/t,后面是范围b/f/p</p>
+<pre><code>#常用总结
+SPC s s #在当前文件中进行搜索关键字，Tab选择（下移），ESC退出搜索
+SPC s S #选择当前文件光标下的关键字进行搜
+
+
+
+</code></pre>
+
+<h2 id="_8">实时代码检索</h2>
+<pre><code>SPC s g G   在工程中使用默认工具实时检索代码
+</code></pre>
+
+<h2 id="_9">代码浏览</h2>
+<p>F2：打开语法树，F3：打开文件树
+SPC '：打开 shell
+SPC m g c：创建 gtags database
+SPC m g d：查找定义
+SPC m g r：查找用
+SPC m g u：更新 gtags database
+Ctrl ]：查找定义（有 tags 文件时）
+Ctrl o：返回上一次位置
+SPC e l：打开代码检查错误窗口
+SPC e L：打开代码检查错误窗口并聚焦
+SpaceVim 的 root 目录不在当前文件目录时（如git,svn项目），此时按 F2 打开语法树会没有内容，因为 F2 只会在一层目录生成 tags 文件，此时需要到命令行在你需要的位置执行 ctags * -R</p>
+<h2 id="10">10 常用操作</h2>
+<p>ctrl+x  对调左右窗口</p>
+<h1 id="spacevim">三 spacevim安装</h1>
+<h2 id="1window">1.window</h2>
+<p>（1）安装比较简单
+（2）直接到代码目录，选择当前目录下的任一文件，右击使用neovim打开即可
+（3）配置：</p>
+<p>（5）win10下基本操作，打开neovim
+<img alt="" src="leanote://file/getImage?fileId=5cbd3a54ab644123d4005646" /></p>
+<h2 id="2ubuntu">2.ubuntu</h2>
+<h1 id="spacevim_1">四 spacevim配置</h1>
+<h2 id="1_1">1.字体配置</h2>
+<pre><code>#Linux/Unix: 
+:set guifont=Monospace\空格14 #注意这里需要对空格使用\进行转意 
+#Windows: 
+:set guifont=Monospace:h14 #注意这里的字体大小需要有h的标识
+</code></pre>
+
+<p>可以配置自己喜欢的字体和字体大小，默认spacevim使用 SauceCodePro Nerd Font Mono字体，在配置文件 ~/.SpaceVim.d/init.toml设置</p>
+<pre><code>[options]
+    guifont = &quot;SauceCodePro Nerd Font Mono:h11&quot;
+</code></pre>
+
+<h2 id="2spacevim">2.更新spacevim</h2>
+<p>（1）在.SpaceVim目录下,执行git pull手动更新
+（2）git -C ~/.SpaceVim pull              // 直接更新
+（3）不建议自动更新，影响启动速度。如有必要，可以在配置文件里添加automatic_update = true  <br />
+（4）如通过插件管理器来更新，在vim界面执行:SPUpdate SpaceVim 
+（5）:SPUpdate  更新所有插件，包括spacevim。可跟参数更新具体插件（TAB可补全）可同时添加多个插件名称作为参数</p>
+<h1 id="_10">五 参考文章</h1>
+<ol>
+<li>vim利剑常磨见血封喉https://www.cnblogs.com/datiangou/p/10173007.html</li>
+<li>vim使用进阶-易水http://www.360doc.com/content/10/0322/09/606382_19736671.shtml</li>
+<li>如何配置 SpaceVim https://www.jianshu.com/p/a21935ca15b3</li>
+<li>十分钟入门spacevim https://blog.csdn.net/weixin_34260991/article/details/87041702
+ 5.Windows 10下使用Neovim + SpaceVim，代替Sublime, IDE 等 https://blog.csdn.net/How_key/article/details/88413220</li>
+<li></li>
+</ol>
+              
+            </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+      
+    </span>
+</div>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme.js" defer></script>
+      <script src="../search/main.js" defer></script>
+
+</body>
+</html>

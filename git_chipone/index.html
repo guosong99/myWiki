@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="shortcut icon" href="../img/favicon.ico">
+  <title>Git chipone - tiger</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Git chipone";
+    var mkdocs_page_input_path = "git_chipone.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href=".." class="icon icon-home"> tiger</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+	  
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="..">home</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../vim_noplugs/">vim</a>
+	    </li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="..">tiger</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="..">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>Git chipone</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <p><strong>总结工作常用的git命令</strong></p>
+<p>先配置git user.name 和user.email吧</p>
+<p>git config --global user.name "guosong"</p>
+<p>git config --global user.email <a href="mailto:sguo@chiponeic.com">sguo@chiponeic.com</a></p>
+<p>git config --list //查看当前git配置信息</p>
+<p>克隆远程仓 </p>
+<p>git clone <a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#115;&#115;&#104;&#58;&#47;&#47;&#102;&#97;&#101;&#64;&#49;&#49;&#52;&#46;&#50;&#52;&#50;&#46;&#49;&#48;&#52;&#46;&#50;&#48;&#48;&#58;&#55;&#48;&#48;&#55;&#47;&#99;&#111;&#100;&#101;&#47;&#102;&#105;&#110;&#103;&#101;&#114;&#112;&#114;&#105;&#110;&#116;&#45;&#102;&#97;&#101;">&#115;&#115;&#104;&#58;&#47;&#47;&#102;&#97;&#101;&#64;&#49;&#49;&#52;&#46;&#50;&#52;&#50;&#46;&#49;&#48;&#52;&#46;&#50;&#48;&#48;&#58;&#55;&#48;&#48;&#55;&#47;&#99;&#111;&#100;&#101;&#47;&#102;&#105;&#110;&#103;&#101;&#114;&#112;&#114;&#105;&#110;&#116;&#45;&#102;&#97;&#101;</a></p>
+<p>git clone <a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#115;&#115;&#104;&#58;&#47;&#47;&#102;&#97;&#101;&#64;&#49;&#49;&#52;&#46;&#50;&#52;&#50;&#46;&#49;&#48;&#52;&#46;&#50;&#48;&#48;&#58;&#55;&#48;&#48;&#55;&#47;&#99;&#111;&#100;&#101;&#47;&#102;&#105;&#110;&#103;&#101;&#114;&#112;&#114;&#105;&#110;&#116;&#45;&#102;&#97;&#101;">&#115;&#115;&#104;&#58;&#47;&#47;&#102;&#97;&#101;&#64;&#49;&#49;&#52;&#46;&#50;&#52;&#50;&#46;&#49;&#48;&#52;&#46;&#50;&#48;&#48;&#58;&#55;&#48;&#48;&#55;&#47;&#99;&#111;&#100;&#101;&#47;&#102;&#105;&#110;&#103;&#101;&#114;&#112;&#114;&#105;&#110;&#116;&#45;&#102;&#97;&#101;</a></p>
+<p>密码：guodaxia</p>
+<p>然后</p>
+<p>（1）git clone <url>  //从远程把代码仓库拿下来</p>
+<p>（2）git branch  //列出本地仓库下所有分支</p>
+<p>​         git branch -a  //-a查看本地和远程仓库下的所有分支,  -r 仅查看远程分支</p>
+<p>​         （<a href="ssh://fae@114.242.104.200:7007/code/fingerprint-fae">fingerprint-fae</a>下的分支：  master_xxxxxxx，由AE来维护，可以基于master_xxxxxx来建项目分支）</p>
+<p>​        git branch test //创建分支test</p>
+<p>​        git checkout test //切换到test分支</p>
+<p>​        git push origin test  //把分支推到远程分支﻿</p>
+<p>​        git branch -d test //删除本地分支test</p>
+<p>​        git push origin :haipai_QS5737_msm8937_android8.0_qsee4.0.5//删除远程分支</p>
+<p><img alt="img" src="leanote://file/getImage?fileId=5a0d5fcfab64416553002163" /></p>
+<p>​        (前面带*号的代表你当前工作目录所处的分支)</p>
+<p>（3）例如基于master_android8.0_qsee4这个仓来建立分支</p>
+<p>​        git pull   //建新项目之前先和远程仓同步到最新</p>
+<p>​        git checkout master_android8.0_qsee4  //切换到master_android8.0_qsee4 分支</p>
+<p>​        git branch yudeE300_android8.0_qsee4 //基于master_android8.0_qsee4 ，新建一个分支yudeE300_android8.0_qsee4，当前目录下会创建一个product文件夹</p>
+<p>​        git checkout yudeE300_android8.0_qsee4 //并切到这个新分支下。在product下修改新分支文件</p>
+<p>​    修改后使用git diff都可以实时查看修改的文件和内容。</p>
+<p>​     git status 可以查看修改了哪些文件夹。</p>
+<p>（4）提交修改内容</p>
+<p>​    git add .  //add这个“.”会把仓下所有文件都添加到仓库，包括未跟踪的文件，不建议这么用。</p>
+<p>​    git reset //恢复到提交前的状态。</p>
+<p>​    git status //可以时刻查看仓库状态（工作区的状态），跟踪所有文件的状态</p>
+<p>​    git add product/build_ca.sh  //这是比较笨的方法，一个一个提交</p>
+<p>​    git add -u //对之前跟踪过的文件，（如果有修改），重新添加到暂存区</p>
+<p>​    git commit -m "init ca.sh"  //提交到仓库当前分支，并注明提交信息（完成了）【将文件提交到仓库，总共需要两步：add（把文件添加到暂存区）和commit（把暂存区内容提交到当前分支）】</p>
+<p>​    git log -2//可以查看最新提交的commit</p>
+<p>​    git log -p //查看当前分支的提交log</p>
+<p>​    git log --oneline //一行显示所有的提交信息，查看版本</p>
+<p>​    git log --pretty=oneline //也是一行显示一条提交信息，但哈希值是完整的。</p>
+<p>​    git commit --amend //如果突然又有修改，同样是与上一次提交</p>
+<p>一块的，可以使用此命令追加提交</p>
+<p>​    git show HEAD//查看每一个commit提交内容</p>
+<p>不建议一个项目里只有一个提交，最好多弄几个提交。 </p>
+<p>（5）撤回</p>
+<p>​    reset使用要慎重</p>
+<p>​    git reset HEAD~ //软撤回，把上次提交撤回，但改动还在。</p>
+<p>​    git reset --hard HEAD~ //硬撤回，所有提交都没有了。</p>
+<p>（6）pull和push</p>
+<p>​    拉代码</p>
+<p>（7）切换分支后，删除之前分支留下的编译文件</p>
+<p>​    git clean -dfx</p>
+<p>（8）合并分支操作（项目分支基于master的分支修改数版后，master也修改了数版，需要将master重大修改合并到项目分支里）</p>
+<p>​    例如，项目分支haipai_QS5737-PA_msm8937_android8.1_qsee4.0.5_64bit_lc1550-51l是基于master_android8.0_qsee4 建的</p>
+<pre><code>1
+2
+3
+4
+5
+6
+
+
+
+
+
+
+
+
+
+gitcheckouthaipai_QS5737-PA_msm8937_android8.1_qsee4.0.5_64bit_lc1550-51l
+
+gitpull
+
+gitrebaseorigin/master_android8.0_qsee4
+
+gitlog//查看下
+
+gitpush--forceoriginhaipai_QS5737-PA_msm8937_android8.1_qsee4.0.5_64bit_lc1550-51l
+
+//push到远程是需要--force的，因为rebase后，远程和本地的分支已经不同步了；另也可以不写远程分支名，默认就是push到当前的分支
+</code></pre>
+
+<p>（9）使用git config -e命令在[core]下面增加一行 filemode = false，不然会修改文件模式，使每次提交的文件数量远远大于修改的文件</p>
+<p>（10）其他常用git命令 </p>
+<p>​        git diff file.txt    //查看文件file.txt之前做了哪些修改，如果工作区有被修改（未提交），具体修改可以用git diff来看，然后再提交。</p>
+<p>（11）回退操作（将代码回退到历史某个版本）</p>
+<p>git 必须知道当前版本是什么？HEAD表示当前版本（即最新的哪次提交）。HEAD^表示上一个版本，HEAD^^表示上上一个版本，HEAD~100以前的第100个版本。</p>
+<p>​    git reset --hard HEAD^    //表示把当前版本回退到上一个版本，--hard的 意思是？</p>
+<p>​    git reset --hard （commit id）//--hard 后面跟指定版本的commit id 就可以回到指定版本。</p>
+<p>​    git reflog //如果你想回到某个指定版本，版本不记得之前commit id号，可以使用此命令查看历史命令，进而找到历史的commit id</p>
+<p>（12）</p>
+<p>​    </p>
+<p>​     远程推送提交</p>
+<p>​    git push origin branch-name   //将本地分支branch-name 推送到远程分支上</p>
+<p>​    git push origin :haipai_QS5737_msm8937_android8.0_qsee4.0.5//删除远程分支</p>
+<p>​    </p>
+<pre><code>1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+
+
+
+
+
+
+
+
+
+//常用操作
+
+gitcheckoutxx-branch
+
+gitbranchxx-branch2//基于xx-branch分支建新分支
+
+
+
+gitadd-u
+
+gitcommit-m&quot;xxxxx&quot;
+
+gitpushoriginbranch-name
+
+
+
+gitbranch-Dxxxxxxxxxx//删除本地分支
+
+gitpushorigin:haipai_QS5737_msm8937_android8.0_qsee4.0.5//删除远程分支
+
+
+
+gitclean-dfx//删除之前分支留下的编译文件
+</code></pre>
+
+<hr />
+<p><strong>忽略不必跟踪的文件</strong>﻿</p>
+<p><strong>1.</strong> 在项目的<a href="http://lib.csdn.net/base/28">Git</a> bash执行以下命令</p>
+<pre><code>1
+
+
+
+
+
+
+
+
+
+gitrm-r-f--cache.
+</code></pre>
+
+<p>(加 -f  表示强制  )清除对所有文件的追踪，最后的点代表操作对象是所有文件。</p>
+<p><strong>2.</strong> 在项目根目录下和App目录下添加.gitignore文件： </p>
+<pre><code>1
+
+
+
+
+
+
+
+
+
+touch.gitignore
+</code></pre>
+
+<p>.gitignore的内容参考如下</p>
+<pre><code>1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+
+
+
+
+
+
+
+
+
+#builtapplicationfiles
+
+*.apk
+
+*.ap_
+
+
+
+#filesforthedexVM
+
+*.dex
+
+
+
+#Javaclassfiles
+
+*.class
+
+
+
+#generatedfiles
+
+bin/
+
+gen/
+
+out/
+
+build/
+
+
+
+#Localconfigurationfile(sdkpath,etc)
+
+local.properties
+
+
+
+#Windowsthumbnaildb
+
+Thumbs.db
+
+
+
+#OSXfiles
+
+.DS_Store
+
+
+
+#Eclipseprojectfiles
+
+.classpath
+
+.project
+
+
+
+#AndroidStudio
+
+*.iml
+
+.idea/
+
+gradle/
+
+
+
+#LocalIDEAworkspace
+
+
+
+#Gradlecache
+
+.gradle
+
+
+
+#NDK
+
+obj/
+</code></pre>
+
+<p>把需要忽略的文件填写到.gitignore中即可</p>
+<p><strong>3.</strong> 在git bash中执行</p>
+<pre><code>1
+
+
+
+
+
+
+
+
+
+gitadd.
+</code></pre>
+
+<p><strong>4.</strong> 在git bash中执行</p>
+<pre><code>1
+
+
+
+
+
+
+
+
+
+gitcommit-m&quot;addgitignore&quot;
+</code></pre>
+
+<p>提交修改即可。</p>
+<hr />
+<h1 id="gitconfiggit">配置gitconfig中git命令行的简写</h1>
+<p>mac系统下面，如果想为当前用户配置git命令的简写，可以输入如下命令：</p>
+<p>cd ~，进入到当前用户目录，这是ls -al 查看一下当前目录下面是否有.gitconfig隐藏文件，如果没有，就touch ~/.gitconfig，新建一个.gitconfig文件出来，如果有就可以直接 vi ~/.gitconfig 直接编辑信息。</p>
+<p>编辑内容如下：
+[alias]</p>
+<p>br = branch </p>
+<p>保存这个文件，这个时候，就可以 git br 直接查看当前分支，也就是实际的git branch命令。</p>
+<p>其他的简写配置可以参考如下：</p>
+<p>st = status</p>
+<p>ci = commit</p>
+<p>至于具体怎么配置git命令的简写，还是要看个人的习惯。</p>
+<p>另外，如果想修改其他信息，比如说git操作的用户信息等等 ，都可以在.gitignore配置文件中进行配置</p>
+<p>可以参考下我的配置</p>
+<p><strong>[html]</strong> <a href="http://blog.csdn.net/u010372981/article/details/52099231#">view plain</a> <a href="http://blog.csdn.net/u010372981/article/details/52099231#">copy</a> <a href="http://blog.csdn.net/u010372981/article/details/52099231#">print</a><a href="http://blog.csdn.net/u010372981/article/details/52099231#">?</a></p>
+<ol>
+<li>[user]  </li>
+<li>​        name = csucoderlee  </li>
+<li>​        email = csucoderlee@foxmail.com  </li>
+<li>[alias]  </li>
+<li>​        br = branch  </li>
+<li>​        st = status  </li>
+<li>​        checkout = ck  </li>
+</ol>
+<pre><code>1
+2
+3
+4
+5
+6
+7
+
+
+
+
+
+
+
+
+
+[user]
+
+name=csucoderlee
+
+email=csucoderlee@foxmail.com
+
+[alias]
+
+br=branch
+
+st=status
+
+checkout=ck
+</code></pre>
+
+<p><a href="https://www.cnblogs.com/wshiqtb/p/5160608.html">https://www.cnblogs.com/wshiqtb/p/5160608.html</a></p>
+<p><a href="http://www.cnblogs.com/wshiqtb/p/5278560.html">http://www.cnblogs.com/wshiqtb/p/5278560.html</a></p>
+<p>​      </p>
+<p>​        </p>
+<p>​         </p>
+<p>​         </p>
+<p>touch .gitignore<br />
+touch .gitignore<br />
+touch .gitignore  </p>
+              
+            </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+      
+    </span>
+</div>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme.js" defer></script>
+      <script src="../search/main.js" defer></script>
+
+</body>
+</html>

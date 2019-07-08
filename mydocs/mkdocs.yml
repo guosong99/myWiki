@@ -1,4 +1,5 @@
 site_name: swift tiger
 
-theme:
-  name: 'material'
+nav:
+    - Home: index.md
+    - About: vim.md
